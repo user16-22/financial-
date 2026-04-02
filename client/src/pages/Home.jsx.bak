@@ -1,0 +1,228 @@
+import { Container, Row, Col, Button, Image, Accordion, Badge } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaArrowRight, FaCheckCircle, FaStar, FaGlobe, FaLock, FaChartLine, FaEnvelope } from 'react-icons/fa';
+import HeroDashboard from '../components/HeroDashboard';
+
+const Home = () => {
+    return (
+        <div className="overflow-hidden">
+            {/* Hero Section */}
+            <section className="position-relative hero-gradient d-flex align-items-center justify-content-center pt-5" style={{ minHeight: '100vh' }}>
+                <Container className="text-center pt-5 mt-5">
+                    <h1 className="fw-bold mb-4" style={{ fontSize: '4.5rem', lineHeight: '1.1', color: '#1A1A1A' }}>
+                        Effortless Financial <br /> Management
+                    </h1>
+                    <p className="text-secondary mb-5 mx-auto" style={{ maxWidth: '750px', fontSize: '1.25rem' }}>
+                        Take control of your finances without the hassle. Our intuitive platform automates budgeting, tracking, and reporting—so you can focus on growing your business.
+                    </p>
+                    <div className="mb-5">
+                        <Button className="btn-primary rounded px-5 py-3 fw-bold" style={{ backgroundColor: '#1F4B43', border: 'none' }} as={Link} to="/contact">Get Started</Button>
+                    </div>
+
+                    {/* Hero Dashboard Graphic (Dynamic Component) */}
+                    <div className="mt-5 mx-auto" style={{ maxWidth: '1400px' }}>
+                        <HeroDashboard />
+                    </div>
+                </Container>
+            </section>
+
+            {/* Sub-header Section */}
+            <section className="py-5 bg-white separator-border">
+                <Container className="text-center py-5">
+                    <h2 className="fw-bold mb-4 mx-auto" style={{ maxWidth: '900px', fontSize: '3rem', color: '#1A1A1A' }}>
+                        Next-level financial tools designed to streamline, automate, and scale your business effortlessly
+                    </h2>
+                    <Link to="/features" className="text-success text-decoration-none fw-bold d-flex align-items-center justify-content-center">
+                        Explore all features <FaArrowRight className="ms-2" />
+                    </Link>
+                </Container>
+            </section>
+
+            {/* Feature Showcase Rows */}
+            <section className="py-5 bg-white">
+                <Container>
+                    {/* Row 1: Effortless money management */}
+                    <Row className="align-items-center mb-5 py-5">
+                        <Col lg={5} className="mb-5 mb-lg-0">
+                            <h2 className="display-6 fw-bold mb-4" style={{ color: '#1A1A1A' }}>Effortless money management</h2>
+                            <p className="text-secondary mb-4 fs-5">
+                                Say goodbye to spreadsheets and complexity. Our intuitive platform makes it easy to manage budgets, track expenses, and stay in control of your finances.
+                            </p>
+                            <Link to="/features" className="text-success text-decoration-none fw-bold d-flex align-items-center">
+                                <FaArrowRight className="me-2" /> Explore Features
+                            </Link>
+                        </Col>
+                        <Col lg={7}>
+                            <Image src="/images/effortless_dashboard.png" fluid rounded className="shadow" />
+                        </Col>
+                    </Row>
+
+                    {/* Row 2: Get paid faster with smart invoicing */}
+                    <Row className="align-items-center mb-5 py-5">
+                        <Col lg={6} className="mb-5 mb-lg-0">
+                            <h2 className="display-6 fw-bold mb-4" style={{ color: '#1A1A1A' }}>Get paid faster with smart invoicing</h2>
+                            <p className="text-secondary mb-4 fs-5">
+                                Automate invoicing and accept multiple payment options effortlessly. No more chasing overdue payments—just smooth, fast transactions.
+                            </p>
+                            <Link to="/contact" className="text-success text-decoration-none fw-bold d-flex align-items-center">
+                                <FaArrowRight className="me-2" /> Start Invoicing
+                            </Link>
+                        </Col>
+                        <Col lg={6} className="ps-lg-5">
+                            <Image src="/images/smart_invoicing.png" fluid rounded className="shadow" />
+                        </Col>
+                    </Row>
+
+                    {/* Row 3: Smart savings plan */}
+                    <Row className="align-items-center mb-5 py-5">
+                        <Col lg={5} className="mb-5 mb-lg-0">
+                            <h2 className="display-6 fw-bold mb-4" style={{ color: '#1A1A1A' }}>Smart savings plan for a secure future</h2>
+                            <p className="text-secondary mb-4 fs-5">
+                                Take control of your financial future with our automated savings plan. Set goals, track progress, and grow your savings effortlessly.
+                            </p>
+                            <Link to="/contact" className="text-success text-decoration-none fw-bold d-flex align-items-center">
+                                <FaArrowRight className="me-2" /> Start Saving
+                            </Link>
+                        </Col>
+                        <Col lg={7}>
+                            <Image src="/images/savings_goal_card.png" fluid rounded className="shadow" />
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Redefining Finance Section */}
+            <section className="py-5 bg-white">
+                <Container className="py-5">
+                    <Row className="justify-content-center">
+                        <Col lg={8} className="text-center">
+                            <span className="text-success fw-bold text-uppercase small mb-3 d-block">Success Stories</span>
+                            <h2 className="display-4 fw-bold mb-4" style={{ color: '#1A1A1A' }}>Redefining finance — Empower your financial journey</h2>
+                            <p className="text-secondary mb-5 fs-5">
+                                Cashly has truly revolutionized how we manage our business finances. The automation features alone have saved us hundreds of hours.
+                            </p>
+                            <Button variant="outline-dark" className="px-4 py-2 fw-bold rounded" as={Link} to="/about">Read Case Study</Button>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Global Reach Flag Grid */}
+            <section className="py-5 bg-white text-center border-top border-bottom">
+                <Container className="py-4">
+                    <p className="text-secondary fw-bold text-uppercase small mb-5">Seamless multi-currency & international transactions</p>
+                    <Row className="justify-content-center g-4 px-lg-5">
+                        {['PL', 'DK', 'EG', 'DE', 'GR', 'IN', 'AU', 'BR', 'GB', 'IT', 'AE', 'KR', 'US', 'ZA', 'SG', 'CN'].map((country) => (
+                            <Col key={country} xs={3} md={1}>
+                                <div className="flag-wrapper opacity-75 grayscale-hover">
+                                    <Image src={`https://flagcdn.com/w80/${country.toLowerCase()}.png`} alt={country} fluid className="rounded-1 shadow-sm" />
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Dark Investment Section */}
+            <section className="py-5 position-relative overflow-hidden" style={{ backgroundColor: '#1A2C2C' }}>
+                <Container className="py-5">
+                    <Row className="align-items-center">
+                        <Col lg={5} className="mb-5 mb-lg-0 text-white">
+                            <span className="text-success fw-bold text-uppercase small mb-3 d-block">Investments</span>
+                            <h2 className="display-5 fw-bold mb-4 text-white">Grow your wealth with smart investments</h2>
+                            <p className="text-secondary mb-5 fs-5">
+                                Access a wide range of investment options from stocks to crypto. Our expert tools help you make informed decisions.
+                            </p>
+                            <div className="d-flex gap-5">
+                                <div className="text-center">
+                                    <div className="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: 60, height: 60 }}>
+                                        <FaLock className="text-success" size={24} />
+                                    </div>
+                                    <p className="small mb-0 opacity-75">Secure</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: 60, height: 60 }}>
+                                        <FaGlobe className="text-success" size={24} />
+                                    </div>
+                                    <p className="small mb-0 opacity-75">Low Fees</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: 60, height: 60 }}>
+                                        <FaChartLine className="text-success" size={24} />
+                                    </div>
+                                    <p className="small mb-0 opacity-75">24/7 Access</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={7}>
+                            <Image src="/images/statistic_card.png" fluid rounded className="shadow-lg border border-secondary" />
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Unified Testimonial Review */}
+            <section className="py-5 bg-white text-center">
+                <Container className="py-5">
+                    <div className="mx-auto" style={{ maxWidth: '900px' }}>
+                        <div className="text-warning mb-4 fs-4">
+                            <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                        </div>
+                        <h3 className="fw-bold mb-5" style={{ fontSize: '2rem', lineHeight: '1.4', color: '#1A1A1A' }}>
+                            "This platform has completely transformed the way I manage my finances. I no longer stress about budgeting or tracking expenses—everything is automated and seamless. Highly recommended!"
+                        </h3>
+                        <div className="d-flex align-items-center justify-content-center gap-3">
+                            <Image src="https://via.placeholder.com/60/ccc?text=SJ" roundedCircle />
+                            <div className="text-start">
+                                <h6 className="fw-bold mb-0">Sarah Jenkins</h6>
+                                <small className="text-secondary">Freelance Designer</small>
+                            </div>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="py-5 bg-cream">
+                <Container className="py-5">
+                    <div className="text-center mb-5">
+                        <span className="text-success fw-bold text-uppercase small mb-2 d-block">Common Questions</span>
+                        <h2 className="fw-bold display-6" style={{ color: '#1A1A1A' }}>Your questions, answered: everything you need to know about Cashly</h2>
+                    </div>
+                    <Row className="justify-content-center">
+                        <Col lg={9}>
+                            <Accordion flush className="modern-accordion">
+                                {[
+                                    { q: "What is the pricing model?", a: "We offer a free tier for basic users and premium plans starting at $29/mo with advanced features and priority support." },
+                                    { q: "Can I use Cashly for my small business?", a: "Yes! Cashly is designed for individuals and businesses of all sizes, with tools for invoicing, payroll, and more." },
+                                    { q: "How safe is my finance data with your services?", a: "Your security is our top priority. We use bank-grade 256-bit encryption and multiple security layers to protect your data." },
+                                    { q: "Does Cashly offer customer support?", a: "Absolutely. We offer 24/7 email support for all users, and priority chat support for our 'Plus' and 'Advance' plan members." },
+                                    { q: "What features are included in my plan?", a: "Each plan covers a core set of features like expense tracking and basic reporting. Check our pricing page for a detailed comparison." },
+                                    { q: "How do I upgrade from my existing plan?", a: "You can upgrade anytime from your dashboard settings under the 'Subscription' tab. Changes reflect immediately." },
+                                    { q: "Who can I contact for more information?", a: "You can reach out to our dedicated support team at mail@cashly.io or use our 'Contact' page to send us a message." }
+                                ].map((item, index) => (
+                                    <Accordion.Item eventKey={index.toString()} key={index} className="mb-3 border rounded-3 overflow-hidden shadow-sm">
+                                        <Accordion.Header className="fw-bold py-3">{item.q}</Accordion.Header>
+                                        <Accordion.Body className="text-secondary pb-4">{item.a}</Accordion.Body>
+                                    </Accordion.Item>
+                                ))}
+                            </Accordion>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Bottom CTA */}
+            <section className="py-5 mb-5 mt-5">
+                <Container>
+                    <div className="rounded-xl p-5 d-flex flex-column flex-md-row align-items-center justify-content-between text-white" style={{ backgroundColor: '#1F4B43', borderRadius: '24px' }}>
+                        <h2 className="display-5 fw-bold mb-4 mb-md-0" style={{ maxWidth: '600px' }}>Take control of your finances today!</h2>
+                        <Button className="btn-light text-success fw-bold px-5 py-3 rounded" style={{ backgroundColor: '#fff', border: 'none', color: '#1F4B43 !important' }} as={Link} to="/contact">Get Started</Button>
+                    </div>
+                </Container>
+            </section>
+        </div>
+    );
+};
+
+export default Home;

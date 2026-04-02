@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Exact colors based on the image analysis */
+  --color-primary: #1A3C34;
+  /* Deep Forest Green for Buttons/Text */
+  --color-text-dark: #121212;
+  /* Nearly Black for Headings */
+  --color-text-body: #4A5568;
+  /* Gray for body text */
+  --color-bg-gradient-start: #b6f8c7;
+  /* Light Green top/left */
+  --color-bg-gradient-end: #dcfce7;
+  /* Lighter Green bottom */
+
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-text-body);
+  background-color: #f0fdf4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-dark);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at center, #ffffff 20%, #bbf49c 100%);
+  background-size: cover;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #143029;
+  border-color: #143029;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+.feature-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 204, 136, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00cc88;
+  margin-bottom: 20px;
+}
+
+/* New Overhaul Utilities */
+.separator-border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bg-cream {
+  background-color: #fdfdfb;
+}
+
+.modern-accordion .accordion-item {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  border-radius: 12px !important;
+  background-color: #fff;
+}
+
+.modern-accordion .accordion-button {
+  font-weight: 600;
+  color: #1A1A1A;
+  padding: 1.25rem;
+}
+
+.modern-accordion .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #00cc88;
+  box-shadow: none;
+}
+
+.modern-accordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.flag-wrapper {
+  transition: all 0.3s ease;
+}
+
+.grayscale-hover {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.grayscale-hover:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.rounded-xl {
+  border-radius: 2rem !important;
+}
+
+/* Global Reach Scrolling Animations */
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+}
+
+.scroll-content {
+  display: flex;
+  flex-shrink: 0;
+  gap: 2rem;
+  min-width: 100%;
+}
+
+.scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.scroll-slow {
+  animation: scroll-left 60s linear infinite;
+}
+
+.scroll-right-to-left {
+  animation: scroll-right 60s linear infinite;
+}
+
+.scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pause on hover */
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+/* Hover effect for cards in footer pages */
+.hover-up {
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.hover-up:hover {
+  transform: translateY(-5px) !important;
+}
